@@ -95,4 +95,4 @@ def get_data_columns():
 if __name__ == "__main__":
     print("Starting Python Flask Server For Home Price Prediction...")
     load_saved_artifacts()
-    app.run()
+    app.run(port=5000)
