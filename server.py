@@ -1,10 +1,7 @@
 from flask import Flask, request, jsonify
 import util
 
-app = Flask(__name__,app = Flask(_name_,
-            static_url_path='', 
-            static_folder='./artifacts',
-            template_folder='./client'))
+app = Flask(_name_,  template_folder="client", static_folder="artifact", static_url_path="")
 
 
 @app.route('./artifacts')
