@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify, render_template
 import util
 
-app = Flask( __name__,  template_folder="./client", static_folder="./artifact", static_url_path="")
+app = Flask( __name__,  template_folder="./client", static_folder="./artifact", static_url_path="127.0.0.1:5000")
 
 
 @app.route('/')
