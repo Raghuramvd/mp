@@ -6,7 +6,7 @@ app = Flask(_name_,  template_folder="client", static_folder="artifact", static_
 
 @app.route('./artifacts')
 def index():
-    return render_template('app.html')
+    return render_template('./app.html')
 
 
 @app.route('/get_location_names', methods=['GET'])
