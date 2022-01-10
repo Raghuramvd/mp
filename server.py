@@ -2,12 +2,13 @@
 from flask import Flask, request, jsonify, render_template
 import util
 
-app = Flask(_name_,  template_folder="client", static_folder="artifact", static_url_path="")
+app = Flask(_name_,  template_folder="client",
+            static_folder="artifact", static_url_path="")
 
 
 @app.route('/')
 def index():
-    return render_template('./app.html')
+    return render_template('app.html')
 
 
 @app.route('/get_location_names', methods=['GET'])
@@ -19,6 +20,7 @@ def get_location_names():
 
     return response
 
+
 @app.route('/predict_home_price', methods=['GET', 'POST'])
 def predict_home_price():
     total_sqft = float(request.form['total_sqft'])
@@ -27,11 +29,12 @@ def predict_home_price():
     bath = int(request.form['bath'])
 
     response = jsonify({
-        'estimated_price': util.get_estimated_price(location,total_sqft,bhk,bath)
+        'estimated_price': util.get_estimated_price(location, total_sqft, bhk, bath)
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response
+
 
 if __name__ == "__main__":
     print("Starting Python Flask Server For Home Price Prediction...")
