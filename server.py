@@ -4,7 +4,7 @@ import util
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('./static')
 def index():
     return render_template('app.html')
 
