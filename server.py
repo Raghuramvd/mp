@@ -12,6 +12,7 @@ def index():
 
 @app.route('/get_location_names', methods=['GET'])
 def get_location_names():
+    print("inside predict")
     response = jsonify({
         'locations': util.get_location_names()
     })
@@ -22,6 +23,7 @@ def get_location_names():
 
 @app.route('/predict_home_price', methods=['GET', 'POST'])
 def predict_home_price():
+    print("inside predict")
     total_sqft = float(request.form['total_sqft'])
     location = request.form['location']
     bhk = int(request.form['bhk'])
